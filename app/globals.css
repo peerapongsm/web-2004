@@ -32,9 +32,9 @@ a {
 }
 
 main {
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 0 12px 56px;
+  width: 100%;
+  margin: 0;
+  padding: 0 28px 56px;
   display: flex;
   flex-direction: column;
   gap: 22px;
@@ -52,9 +52,6 @@ main {
     radial-gradient(circle at 15% 60%, #7dffb0 0 1px, transparent 2px);
   background-size: 140px 140px;
   background-repeat: repeat;
-  border-left: 3px dashed #ff6ec7;
-  border-right: 3px dashed #ff6ec7;
-  box-shadow: 0 0 40px rgba(255, 110, 199, 0.25);
 }
 
 /* --- retro buttons (2004-styled but real, accessible <button> elements) --- */
