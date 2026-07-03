@@ -181,68 +181,174 @@ main {
   vertical-align: middle;
 }
 
+/* Museum-placard card: a deliberately pristine, quiet museum label pinned on
+   top of the glittery 2004 page underneath — the contrast is the joke. */
+
 .museum-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(20, 5, 30, 0.7);
+  background: rgba(18, 14, 10, 0.55);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 10001;
   padding: 16px;
+  animation: museum-overlay-in 180ms ease-out both;
+}
+
+.museum-overlay.is-closing {
+  animation: museum-overlay-out 180ms ease-in both;
 }
 
 .museum-card {
-  background: #fffdf5;
-  color: #2b0a4a;
-  max-width: 480px;
+  background: #fdfcf7;
+  color: #2a2620;
+  max-width: 460px;
   width: 100%;
-  border-radius: 12px;
-  padding: 18px;
+  border-radius: 3px;
+  padding: 26px 26px 22px;
   max-height: 82vh;
   overflow-y: auto;
-  border: 3px solid #ffd447;
-  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.3);
+  border: 1px solid #ded6bf;
+  box-shadow: 0 20px 44px rgba(20, 14, 4, 0.28);
+  font-family: var(--font-trirong, "Noto Serif Thai", Georgia, serif);
+  animation: museum-card-in 220ms cubic-bezier(0.2, 0.9, 0.3, 1) both;
+}
+
+.museum-card.is-closing {
+  animation: museum-card-out 180ms ease-in both;
+}
+
+@keyframes museum-overlay-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes museum-overlay-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes museum-card-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes museum-card-out {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(6px) scale(0.98);
+  }
 }
 
 .museum-card-header {
   display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 10px;
+  align-items: flex-start;
+  gap: 12px;
 }
 
-.museum-card-header h3 {
-  flex: 1;
-  margin: 0;
+.museum-card-mark {
   font-size: 1.05rem;
-  color: #ff2fa0;
+  opacity: 0.5;
+  line-height: 1;
+  margin-top: 2px;
+}
+
+.museum-card-heading {
+  flex: 1;
+  min-width: 0;
+}
+
+.museum-card-eyebrow {
+  margin: 0 0 6px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-variant: small-caps;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  color: #8a7c5e;
+}
+
+.museum-card-heading h3 {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #241f14;
 }
 
 .museum-card-close {
   border: none;
   background: transparent;
-  font-size: 1rem;
-  color: #6b4a8c;
+  font-size: 0.95rem;
+  color: #a49873;
   padding: 4px;
+  line-height: 1;
 }
 
-.museum-card-body dt {
-  font-weight: 700;
-  color: #7b2fff;
-  margin-top: 10px;
-  font-size: 0.85rem;
+.museum-card-close:hover {
+  color: #241f14;
+}
+
+.museum-card-rule {
+  border: none;
+  border-top: 1px solid #e5dfca;
+  margin: 16px 0 14px;
+}
+
+.museum-card-body dt.museum-card-label {
+  font-family: Georgia, "Times New Roman", serif;
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  font-size: 0.68rem;
+  color: #8a7c5e;
+  margin-top: 14px;
+}
+
+.museum-card-body dt.museum-card-label:first-child {
+  margin-top: 0;
 }
 
 .museum-card-body dd {
   margin: 4px 0 0;
-  font-size: 0.88rem;
-  line-height: 1.65;
+  font-size: 0.92rem;
+  line-height: 1.75;
+  color: #2a2620;
 }
 
 .museum-card-ok {
-  margin-top: 14px;
+  margin-top: 18px;
   width: 100%;
+  border: 1px solid #241f14;
+  background: transparent;
+  color: #241f14;
+  border-radius: 2px;
+  padding: 9px 16px;
+  font-family: var(--font-trirong, "Noto Serif Thai", Georgia, serif);
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+}
+
+.museum-card-ok:hover {
+  background: #241f14;
+  color: #fdfcf7;
 }
 
 /* --- glitter header --- */
@@ -620,16 +726,20 @@ main {
 }
 
 /* --- plain page header (used on /method) --- */
+/* the curator's page: same pristine museum-placard treatment as the annotation
+   cards, deliberately contrasting the glittery 2004 homepage. */
 
 header.app-header {
   text-align: center;
-  padding-top: 16px;
+  padding: 28px 16px 0;
+  font-family: var(--font-trirong, "Noto Serif Thai", Georgia, serif);
 }
 
 header.app-header h1 {
-  font-size: 1.4rem;
-  margin: 0 0 8px;
-  color: #ff2fa0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 10px;
+  color: #e9dfc4;
 }
 
 /* --- footer --- */
@@ -643,15 +753,33 @@ footer.app-footer {
 
 /* --- method page --- */
 
+.method-content {
+  background: #fdfcf7;
+  color: #2a2620;
+  border: 1px solid #ded6bf;
+  border-radius: 3px;
+  padding: 26px 28px;
+  box-shadow: 0 12px 30px rgba(20, 14, 4, 0.14);
+  font-family: var(--font-trirong, "Noto Serif Thai", Georgia, serif);
+}
+
 .method-content h2 {
-  font-size: 1.05rem;
-  margin-top: 24px;
-  color: #ff2fa0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.95rem;
+  margin-top: 26px;
+  color: #8a7c5e;
+}
+
+.method-content h2:first-child {
+  margin-top: 0;
 }
 
 .method-content p,
 .method-content li {
-  font-size: 0.9rem;
+  font-size: 0.92rem;
+  line-height: 1.75;
 }
 
 .method-content ul {
@@ -681,5 +809,12 @@ footer.app-footer {
 
   .sparkle-particle {
     display: none;
+  }
+
+  .museum-overlay,
+  .museum-card {
+    animation: none;
+    opacity: 1;
+    transform: none;
   }
 }

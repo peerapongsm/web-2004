@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { AppShell } from "@/components/AppShell";
+import { trirong } from "./fonts";
 
 export const metadata: Metadata = {
   title: "โฮมเพจน้องเมย์ ม.4",
@@ -18,7 +19,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           data-website-id="3f09453d-0b39-443e-8845-5e65611cc58a"
         />
       </head>
-      <body>
+      <body className={trirong.variable}>
         <AppShell>{children}</AppShell>
       </body>
     </html>
