@@ -5,9 +5,9 @@ import { Toast } from "./Toast";
 import { MuseumInfoButton } from "./MuseumInfoButton";
 
 const LINKS = [
-  { id: "msn", annotationId: "dead-link-msn", label: "💬 แอด MSN เมย์" },
-  { id: "ragnarok", annotationId: "dead-link-ragnarok", label: "⚔️ กิลด์ Ragnarok ของเมย์" },
-  { id: "pantip", annotationId: "dead-link-pantip", label: "📝 กระทู้ Pantip ที่เมย์ตั้ง" },
+  { id: "msn", annotationId: "dead-link-msn", label: "💬 แอด MSN เม๋ย์จร้า" },
+  { id: "ragnarok", annotationId: "dead-link-ragnarok", label: "⚔️ กิลด์ Ragnarok ของเม๋ย์" },
+  { id: "pantip", annotationId: "dead-link-pantip", label: "📝 กระทู้ Pantip ที่เม๋ย์ตั้งเองน๊า" },
 ];
 
 export function DeadLinks() {
@@ -16,7 +16,7 @@ export function DeadLinks() {
   return (
     <div className="dead-links-panel">
       <h2 className="section-title">
-        🔗 ลิงก์เพื่อนๆ ของเมย์ <MuseumInfoButton id="table-layout" />
+        🔗 ลิงก์เพื่อนๆ ของเม๋ย์จร้า <MuseumInfoButton id="table-layout" />
       </h2>
       {/* deliberate retro table layout — see museum annotation "table-layout" */}
       <table className="dead-links-table" cellPadding={0} cellSpacing={6} border={0}>

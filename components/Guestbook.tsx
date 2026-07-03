@@ -42,33 +42,33 @@ export function Guestbook() {
   return (
     <div className="guestbook-panel">
       <MuseumInfoButton id="guestbook" />
-      <h2 className="section-title">📖 สมุดเยี่ยม (Guestbook)</h2>
+      <h2 className="section-title">📖 สมุดเยี่ยมของเม๋ย์ (Guestbook) จร้า</h2>
       <form onSubmit={handleSubmit} className="guestbook-form">
         <input
           type="text"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          placeholder="ชื่อคุณ"
+          placeholder="ชื่อของเทอจร้า"
           maxLength={40}
           className="retro-input"
         />
         <textarea
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          placeholder="ฝากข้อความถึงเมย์หน่อยน้า~"
+          placeholder="ฝากข้อความถึงเม๋ย์หน่อยน๊าา~"
           maxLength={280}
           className="retro-input"
           rows={2}
         />
         <button type="submit" className="btn btn-primary btn-sm">
-          ✍️ ฝากข้อความ
+          ✍️ ฝากข้อความเรยจร้า
         </button>
       </form>
       <p className="local-only-note">
         *ข้อความเก็บไว้แค่ในเครื่องคุณเท่านั้นนะ (ของจริงยุคนั้นมี server เก็บให้ทุกคนเห็นข้อความกัน)
       </p>
       <ul className="guestbook-list">
-        {entries.length === 0 && <li className="empty-note">ยังไม่มีใครฝากข้อความเลย เป็นคนแรกสิ!</li>}
+        {entries.length === 0 && <li className="empty-note">ยังม่ายมีคัยฝากข้อความเรยอ่ะ เปงคนแรกสิจร้า!</li>}
         {entries.map((entry, i) => (
           <li key={i}>
             <strong>{entry.name}</strong>: {entry.message}

@@ -34,13 +34,25 @@ export function MusicCorner() {
   return (
     <div className="music-corner">
       <MuseumInfoButton id="autoplay-music" />
-      <p className="music-corner-title">🎵 เพลงประจำเว็บของเมย์ 🎵</p>
+      <p className="music-corner-title">🎵 เพงประจำเว็บของเม๋ย์จร้า 🎵</p>
       <button type="button" className="btn btn-primary" onClick={playing ? handleStop : handlePlay}>
-        {playing ? "⏸ หยุดเพลง" : "▶ กดเพื่อเล่นเพลง"}
+        {playing ? "⏸ หยุดเพงก่อนน๊า" : "▶ กดฟังเพงเรยจร้า"}
       </button>
       <p className="music-corner-note">
-        *สมัยนี้เว็บเบราว์เซอร์ไม่ยอมให้เพลงเล่นเองอัตโนมัติแล้วจ้า ต้องกดปุ่มเองนะ (เมย์ก็คิดถึงตอนที่เพลงมันเล่นเองได้เลยอ่ะ 555)
+        *เดวนี้เบราว์เซอร์ม่ายยอมให้เพงเล่นเองอัตโนมัติแว้วจร้า ต้องกดปุ่มเองน๊า (เมย์ก้อคิดถุงตอนที่เพงมันเล่นเองด้ายเรยอ่ะ 555)
       </p>
+      <p className="music-corner-title">📺 MV เพงโปรดของเม๋ย์ ชอบมว๊ากๆ เปิดวนทั้งวันเรย 📺</p>
+      <iframe
+        className="mv-embed"
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/SeioAfpmHvg?si=oSBgASb3QzJ57cuS"
+        title="YouTube video player"
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerPolicy="strict-origin-when-cross-origin"
+        allowFullScreen
+      />
     </div>
   );
 }

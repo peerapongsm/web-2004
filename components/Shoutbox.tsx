@@ -29,7 +29,7 @@ export function Shoutbox() {
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
     if (!text.trim()) return;
-    const next = [{ name: name.trim() || "ไม่ระบุชื่อ", text: text.trim(), ts: Date.now() }, ...shouts].slice(
+    const next = [{ name: name.trim() || "ม่ายบอกชื่ออ่ะ", text: text.trim(), ts: Date.now() }, ...shouts].slice(
       0,
       MAX_ENTRIES,
     );
@@ -41,13 +41,13 @@ export function Shoutbox() {
   return (
     <div className="shoutbox-panel">
       <MuseumInfoButton id="shoutbox" />
-      <h2 className="section-title">💬 Shoutbox</h2>
+      <h2 className="section-title">💬 Shoutbox ตะโกนหาเม๋ย์จร้า</h2>
       <form onSubmit={handleSubmit} className="shoutbox-form">
         <input
           type="text"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          placeholder="ชื่อ"
+          placeholder="ชื่อเทอ"
           maxLength={20}
           className="retro-input shoutbox-name"
         />
@@ -55,16 +55,16 @@ export function Shoutbox() {
           type="text"
           value={text}
           onChange={(e) => setText(e.target.value)}
-          placeholder="ตะโกนอะไรสักอย่าง..."
+          placeholder="ตะโกนไรสักอย่างเรยจร้า..."
           maxLength={100}
           className="retro-input shoutbox-text"
         />
         <button type="submit" className="btn btn-primary btn-sm">
-          📣 ส่ง
+          📣 ส่งเรย
         </button>
       </form>
       <ul className="shoutbox-list">
-        {shouts.length === 0 && <li className="empty-note">เงียบจัง ตะโกนก่อนเลย!</li>}
+        {shouts.length === 0 && <li className="empty-note">เงียบจุงงง ตะโกนก่อนเรยยย!</li>}
         {shouts.map((s, i) => (
           <li key={i}>
             <strong>{s.name}:</strong> {s.text}

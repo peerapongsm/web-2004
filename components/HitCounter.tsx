@@ -17,7 +17,7 @@ export function HitCounter() {
   return (
     <div className="hit-counter">
       <MuseumInfoButton id="hit-counter" />
-      <p className="hit-counter-label">จำนวนผู้เข้าชม</p>
+      <p className="hit-counter-label">จำนวนคนแวะมาหาเม๋ย์จร้า</p>
       <div className="hit-counter-digits" aria-label={`ผู้เข้าชม ${formatHitCount(count)} คน`}>
         {digits.map((d, i) => (
           <span key={i} className="hit-counter-digit">

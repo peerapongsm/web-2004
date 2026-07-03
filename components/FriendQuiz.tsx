@@ -29,7 +29,7 @@ export function FriendQuiz() {
   return (
     <div className="quiz-panel">
       <MuseumInfoButton id="friend-quiz" />
-      <h2 className="section-title">💖 คุณเป็นเพื่อนแท้ของเมย์รึเปล่า?</h2>
+      <h2 className="section-title">💖 เทอเปงเพื่อนแท้ของเม๋ย์รึป่าววว?</h2>
       {quizQuestions.map((q, qIndex) => (
         <fieldset key={q.id} className="quiz-question">
           <legend>{q.question}</legend>
@@ -48,10 +48,10 @@ export function FriendQuiz() {
       ))}
       <div className="quiz-actions">
         <button type="button" className="btn btn-primary" onClick={handleSubmit} disabled={!allAnswered}>
-          ✅ ดูผล
+          ✅ ดูผลเรยจร้า
         </button>
         <button type="button" className="btn btn-outline btn-sm" onClick={handleReset}>
-          🔄 ทำใหม่
+          🔄 ทามใหม่น๊า
         </button>
       </div>
       {result && (

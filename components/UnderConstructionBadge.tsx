@@ -7,7 +7,7 @@ export function UnderConstructionBadge() {
     <div className="under-construction">
       <MuseumInfoButton id="under-construction" />
       <div className="construction-stripes" aria-hidden="true" />
-      <p className="construction-text">🚧 อยู่ระหว่างการก่อสร้าง (ตลอดกาล) 🚧</p>
+      <p className="construction-text">🚧 อยู่ระหว่างก่อสร้างน๊า (ตลอดกาลเรยจร้า) 🚧</p>
       <div className="construction-stripes" aria-hidden="true" />
     </div>
   );

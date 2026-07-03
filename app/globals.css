@@ -485,6 +485,15 @@ main {
   color: #7b2fff;
 }
 
+.mv-embed {
+  width: 100%;
+  max-width: 560px;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border: 3px ridge #ff6ec7;
+  border-radius: 8px;
+}
+
 /* --- guestbook / shoutbox forms --- */
 
 .retro-input {
