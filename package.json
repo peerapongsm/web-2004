@@ -1,0 +1,29 @@
+{
+  "name": "project-33-web-2004",
+  "version": "1.0.0",
+  "description": "หน้าเว็บปี 2004 — พิพิธภัณฑ์อินเทอร์เน็ตไทยยุค hi5/GeoCities แบบ interactive โฮมเพจปลอมของน้องเมย์ ม.4 ครบทุก artifact ยุคนั้น พร้อมโหมดพิพิธภัณฑ์อธิบายประวัติศาสตร์",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "next": "^15.5.19",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7"
+  },
+  "devDependencies": {
+    "@types/node": "^26.0.1",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.3",
+    "jsdom": "^29.1.1",
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.9"
+  }
+}
